@@ -1,0 +1,22 @@
+$circle-size: 18px;
+
+.app-repo-info {
+  &__header {
+    &__avatar {
+      background-size: cover;
+    }
+
+    &__language-wrapper {
+      display: flex;
+    }
+
+    &__color-circle {
+      display: inline-block;
+      width: calc(#{$circle-size});
+      height: calc(#{$circle-size});
+      border-radius: 50%;
+      border: solid 1px #333;
+      margin-right: 8px;
+    }
+  }
+}

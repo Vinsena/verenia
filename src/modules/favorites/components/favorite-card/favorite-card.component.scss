@@ -1,0 +1,12 @@
+.app-favorite-card {
+  margin: 16px;
+  display: flex;
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__delete-icon {
+    color: #808080;
+  }
+}

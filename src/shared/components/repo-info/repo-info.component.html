@@ -1,0 +1,17 @@
+<ng-container class="app-repo-info">
+  <mat-card-header class="app-repo-info__header">
+    <div mat-card-avatar class="app-repo-info__header__avatar"
+         [style.backgroundImage]="'url(' + data.owner.avatarUrl + ')'"></div>
+    <mat-card-title><a href="{{data.url}}" [title]="data.url">{{data.name}}</a></mat-card-title>
+    <mat-card-subtitle *ngIf="data.language?.name" class="app-repo-info__header__language-wrapper">
+      <span class="app-repo-info__header__color-circle" [style.background]="data.language?.color"></span>
+      {{data.language?.name}}
+    </mat-card-subtitle>
+    <mat-card-subtitle>{{data.owner.login}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{data.description}}
+    </p>
+  </mat-card-content>
+</ng-container>

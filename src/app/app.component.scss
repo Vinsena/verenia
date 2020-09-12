@@ -1,0 +1,10 @@
+.app-component {
+  &__toolbar {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .activeLink {
+    display: none;
+  }
+}

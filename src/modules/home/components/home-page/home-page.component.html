@@ -1,0 +1,37 @@
+<div class="app-home-page">
+  <mat-form-field appearance="outline" class="app-home-page__input-wrapper"
+  >
+    <mat-label>Search by repository name</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput class="search-input"
+           [formControl]="searchInputControl">
+  </mat-form-field>
+  <mat-form-field appearance="outline" *ngIf="filteredRepos?.length && languages">
+    <mat-label>Language</mat-label>
+    <mat-select [formControl]="languageControl">
+      <mat-option *ngFor="let lang of languages" [value]="lang" class="app-dashboard-option">
+        <span class="app-home-page-option__color-circle"
+              [style.backgroundColor]="lang.color"></span> {{lang.name || 'Any language'}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="loading-wrapper" [ngClass]="{ loading: isLoading }">
+    <mat-spinner class="loading-spinner" [color]="'primary'"></mat-spinner>
+
+    <div class="cards-wrapper loading-content" *ngIf="filteredRepos?.length">
+      <app-card *ngFor="let repo of filteredRepos"
+                [data]="repo"
+                [isFavorite]="!!(favoriteRepos | async)[repo.id]"
+                (unmarkedAsFavorite)="removeFromFavorites($event)"
+                (markedAsFavorite)="addToFavorites($event)">
+      </app-card>
+    </div>
+    <p *ngIf="filteredRepos && !filteredRepos.length">We didn't find any matches</p>
+  </div>
+</div>
+
+
+
+
+
+

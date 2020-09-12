@@ -1,0 +1,14 @@
+<div class="app-favorites-page">
+  <div *ngIf="(favoriteRepos | async).length; else emptyBlock">
+    <app-favorite-card *ngFor="let repo of (favoriteRepos | async)"
+                       [data]="repo"
+                       (unmarkedAsFavorite)="removeFromFavorites($event)">
+    </app-favorite-card>
+  </div>
+
+  <ng-template #emptyBlock>
+    <p class="app-favorites-page__empty-state">Nothing to show.</p>
+  </ng-template>
+
+</div>
+

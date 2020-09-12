@@ -1,0 +1,7 @@
+<mat-card class="app-favorite-card">
+  <app-repo-info [data]="data" class="app-favorite-card__content"></app-repo-info>
+  <button mat-icon-button aria-label="Remove repository from favorites" class="app-favorite-card__delete-icon"
+          (click)="removeFromFavorites()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>

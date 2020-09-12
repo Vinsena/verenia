@@ -1,0 +1,8 @@
+<mat-card class="app-card">
+  <app-repo-info [data]="data" class="app-card__content"></app-repo-info>
+  <button mat-icon-button aria-label="Add repository to favorites"
+          [ngClass]="{   'favorite' : isFavorite,  'default' : !isFavorite}"
+          (click)="isFavorite ? removeFromFavorites() : addToFavorites()">
+    <mat-icon>star_rate</mat-icon>
+  </button>
+</mat-card>

@@ -1,0 +1,16 @@
+.app-card {
+  margin: 16px;
+  display: flex;
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  .favorite {
+    color: #3f51b5;
+  }
+
+  .default {
+    color: #808080;
+  }
+}
