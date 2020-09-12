@@ -10,7 +10,6 @@ import { ApiService } from '../../interfaces/api.service';
 import { HttpApiService } from './services/http-api.service';
 
 @NgModule({
-  declarations: [],
   providers: [
     { provide: ENVIRONMENT, useValue: environment },
     { provide: CONFIGURATION, useValue: config },

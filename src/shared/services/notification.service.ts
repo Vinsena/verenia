@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Notification } from '@shared/models/notification.model';
-import { NotificationTypes } from '@shared/models/notification.type';
+import { NotificationType } from '@shared/models/notification-type';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class NotificationService {
     const data = {
       message: text,
       duration: 5000,
-      type: NotificationTypes.ERROR,
+      type: NotificationType.ERROR,
     } as Notification;
     this.notification.next(data);
   }
@@ -25,7 +25,7 @@ export class NotificationService {
     const data = {
       message: text,
       duration: 3000,
-      type: NotificationTypes.SUCCESS,
+      type: NotificationType.SUCCESS,
     } as Notification;
     this.notification.next(data);
   }
